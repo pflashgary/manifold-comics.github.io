@@ -491,7 +491,7 @@ ul li span {
 
 .page-stack__item {
     position: absolute;
-    width: 30%;
+    width: 50%;
     /* Adjust width as needed */
     opacity: 0.8;
 
