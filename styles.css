@@ -491,7 +491,7 @@ ul li span {
 
 .page-stack__item {
     position: absolute;
-    width: calc(50% - 10px);
+    width: calc(60% - 10px);
     /* Add some margin for mobile */
     opacity: 0.8;
 }
