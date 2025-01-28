@@ -491,7 +491,7 @@ ul li span {
 
 .page-stack__item {
     position: absolute;
-    width: calc(60% - 10px);
+    width: calc(100% - 10px);
     /* Add some margin for mobile */
     opacity: 0.8;
 }
@@ -500,7 +500,7 @@ ul li span {
 
     /* Adjust breakpoint as needed */
     .page-stack__item {
-        width: 60%;
+        width: 100%;
     }
 }
 
