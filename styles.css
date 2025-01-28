@@ -480,18 +480,11 @@ ul li span {
 
 .page-stack__item {
     position: absolute;
-    width: calc(100% - 10px);
+    width: 700px;
     /* Add some margin for mobile */
     opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-
-    /* Adjust breakpoint as needed */
-    .page-stack__item {
-        width: 100%;
-    }
-}
 
 .page-stack__item--angle {
     position: relative;
