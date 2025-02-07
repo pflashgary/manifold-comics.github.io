@@ -480,7 +480,7 @@ ul li span {
 
 .page-stack__item {
     position: absolute;
-    width: 500px;
+    width: 300px;
     /* Add some margin for mobile */
     opacity: 0.8;
 }
