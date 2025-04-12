@@ -128,71 +128,6 @@ section p {
         transform: translateY(-10px) rotate(45deg);
     }
 }
-/* Adjust the grid layout to give more space to the video cards */
-.chapter-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    /* Increase min width */
-    gap: 20px;
-    max-width: 1200px;
-    /* Adjust max width as needed */
-    margin: 0 auto;
-    /* Center the grid */
-    padding: 20px;
-}
-
-/* Adjust the chapter card to better accommodate videos */
-.chapter-card {
-    background: #2a2a2a;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    color: #e0e0e0;
-    width: 100%;
-    /* Remove fixed height that was for images */
-    /* height: auto; */
-    display: flex;
-    /* Use flexbox for better content alignment */
-    flex-direction: column;
-    /* Stack title and video vertically */
-}
-
-.chapter-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
-}
-
-.chapter-card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0 10px;
-    /* Add some bottom margin for spacing */
-    color: #ff6f61;
-    text-shadow: 1px 1px 0 #000;
-    padding: 0 10px;
-    /* Add some horizontal padding */
-}
-
-.chapter-card .video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 15px;
-    /* Add some bottom margin below the video */
-}
-
-.chapter-card .video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
 /* Remove speech bubble styles as they are not used here */
 .speech-bubble,
@@ -496,115 +431,94 @@ ul li span {
     color: #00ffcc;
 }
 
-.chapter-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Adjust minmax for smaller screens */
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.chapter-card {
-    background: #2a2a2a;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    color: #e0e0e0;
-    width: 100%;
+/* Style for the spurt list (already present) */
+.spurt-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.chapter-card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0 10px;
-    color: #ff6f61;
-    text-shadow: 1px 1px 0 #000;
-    padding: 0 10px;
+.spurt-list li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.page-stack {
-    position: relative;
-    width: 80%;
-    /* Adjust the width of the stack relative to the card */
-    max-width: 300px;
-    /* Limit the maximum width of the stack */
-    height: auto;
-    /* Adjust height based on the aspect ratio of the images */
+.spurt-list li a:hover {
+    background-color: #444;
 }
 
-.page-stack__item {
-    position: absolute;
-    width: 100%;
-    /* Make the images fill the width of the stack */
-    height: auto;
-    opacity: 0.8;
-    transition: transform 0.3s ease;
+
+/* Style for the video player container (already present) */
+#video-player-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.page-stack__item--angle {
-    transform: rotate(-10deg);
-    /* Adjust positioning for better overlay */
-    top: 5%;
-    left: 5%;
+#video-player-container h3 {
+    color: #00ffcc;
+    margin-bottom: 10px;
 }
 
-/* Ensure images inside page-stack scale down properly */
-.page-stack img {
-    display: block;
-    /* Prevent extra spacing below inline images */
-    max-width: 100%;
-    /* Ensure images don't exceed the stack's width */
-    height: auto;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-    .chapter-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        /* Smaller minmax for mobile */
-    }
-
-    .page-stack {
-        width: 90%;
-        /* Take up more width on smaller screens */
-        max-width: 200px;
-        /* Further limit max width on mobile */
-    }
-
-    .page-stack__item {
-        opacity: 0.7;
-        /* Slightly more transparent on mobile */
-    }
-
-    .page-stack__item--angle {
-        transform: rotate(-8deg);
-        /* Slightly less angle on mobile */
-        top: 3%;
-        left: 3%;
-    }
-}
 .video-container {
     position: relative;
-    width: 0%; /* Or a percentage that suits your desired width relative to the parent */
-    /* max-width: 500px; This will prevent it from getting wider than 500px */
-    margin: 20px auto; /* This centers the container horizontally and adds vertical margin */
-    padding-bottom: calc(500px * 9 / 16); /* Maintain 16:9 aspect ratio based on max-width */
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: calc(800px * 9 / 16);
     height: 0;
     overflow: hidden;
 }
 
-.video-container iframe {
+.video-container video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+.creative-sneak-peek-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create two columns */
+    gap: 20px;
+    /* Spacing between the containers */
+}
+
+.creative-sneak-peek-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    /* Adjust aspect ratio as needed */
+}
+
+.creative-sneak-peek-item {
+    position: absolute;
+    width: 70%;
+    /* Adjust image width within the container */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.creative-sneak-peek-item:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.creative-sneak-peek-item--angle {
+    transform: rotate(-5deg);
+    /* Adjust angle */
 }
