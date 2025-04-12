@@ -470,7 +470,7 @@ ul li span {
 
 .video-container {
     position: relative;
-    width: 80%;
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: calc(800px * 9 / 16);
@@ -504,7 +504,7 @@ ul li span {
 
 .creative-sneak-peek-item {
     position: absolute;
-    width: 70%;
+    width: 90%;
     /* Adjust image width within the container */
     height: auto;
     border-radius: 8px;
