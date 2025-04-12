@@ -1,0 +1,3 @@
+[STREAM]
+index=0  # Or the correct index of the video stream in spurt3.mp4
+aspect_ratio=16/9
