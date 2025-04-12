@@ -128,20 +128,22 @@ section p {
         transform: translateY(-10px) rotate(45deg);
     }
 }
-
-/* Chapter List */
+/* Adjust the grid layout to give more space to the video cards */
 .chapter-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3x3 grid */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Increase min width */
     gap: 20px;
-    max-width: 800px;
+    max-width: 1200px;
+    /* Adjust max width as needed */
     margin: 0 auto;
+    /* Center the grid */
+    padding: 20px;
 }
 
+/* Adjust the chapter card to better accommodate videos */
 .chapter-card {
     background: #2a2a2a;
-    /* Dark gray */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -149,8 +151,13 @@ section p {
     text-align: center;
     text-decoration: none;
     color: #e0e0e0;
-    /* Light gray */
-    width: 100%; /* Add width to chapter-card */
+    width: 100%;
+    /* Remove fixed height that was for images */
+    /* height: auto; */
+    display: flex;
+    /* Use flexbox for better content alignment */
+    flex-direction: column;
+    /* Stack title and video vertically */
 }
 
 .chapter-card:hover {
@@ -158,21 +165,39 @@ section p {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
-.chapter-card img {
-    width: 100%;
-    height: 200px;
-    /* Fixed height for consistency */
-    object-fit: cover;
-}
-
 .chapter-card h3 {
     font-size: 1.5rem;
-    /* Larger font size for comic effect */
-    margin: 15px 0;
+    margin: 15px 0 10px;
+    /* Add some bottom margin for spacing */
     color: #ff6f61;
-    /* Soft coral */
     text-shadow: 1px 1px 0 #000;
-    /* Add a shadow for comic effect */
+    padding: 0 10px;
+    /* Add some horizontal padding */
+}
+
+.chapter-card .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px;
+    /* Add some bottom margin below the video */
+}
+
+.chapter-card .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Remove speech bubble styles as they are not used here */
+.speech-bubble,
+.speech-bubble::after {
+    display: none !important;
 }
 
 .speech-bubble {
@@ -495,7 +520,7 @@ ul li span {
 
 .video-container {
     position: relative;
-    width: 50%; /* Or a percentage that suits your desired width relative to the parent */
+    width: 0%; /* Or a percentage that suits your desired width relative to the parent */
     /* max-width: 500px; This will prevent it from getting wider than 500px */
     margin: 20px auto; /* This centers the container horizontally and adds vertical margin */
     padding-bottom: calc(500px * 9 / 16); /* Maintain 16:9 aspect ratio based on max-width */
