@@ -496,28 +496,101 @@ ul li span {
     color: #00ffcc;
 }
 
-.page-stack {
-    justify-content: center;
-    /* Center images horizontally */
+.chapter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Adjust minmax for smaller screens */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chapter-card {
+    background: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: #e0e0e0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    /* Center images vertically */
+    padding: 15px;
+}
+
+.chapter-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+    color: #ff6f61;
+    text-shadow: 1px 1px 0 #000;
+    padding: 0 10px;
+}
+
+.page-stack {
+    position: relative;
+    width: 80%;
+    /* Adjust the width of the stack relative to the card */
+    max-width: 300px;
+    /* Limit the maximum width of the stack */
+    height: auto;
+    /* Adjust height based on the aspect ratio of the images */
 }
 
 .page-stack__item {
     position: absolute;
-    width: 400px;
+    width: 100%;
+    /* Make the images fill the width of the stack */
     height: auto;
-        /* Maintain aspect ratio */
-    /* Add some margin for mobile */
     opacity: 0.8;
+    transition: transform 0.3s ease;
 }
-
 
 .page-stack__item--angle {
-    position: relative;
     transform: rotate(-10deg);
+    /* Adjust positioning for better overlay */
+    top: 5%;
+    left: 5%;
 }
 
+/* Ensure images inside page-stack scale down properly */
+.page-stack img {
+    display: block;
+    /* Prevent extra spacing below inline images */
+    max-width: 100%;
+    /* Ensure images don't exceed the stack's width */
+    height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .chapter-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* Smaller minmax for mobile */
+    }
+
+    .page-stack {
+        width: 90%;
+        /* Take up more width on smaller screens */
+        max-width: 200px;
+        /* Further limit max width on mobile */
+    }
+
+    .page-stack__item {
+        opacity: 0.7;
+        /* Slightly more transparent on mobile */
+    }
+
+    .page-stack__item--angle {
+        transform: rotate(-8deg);
+        /* Slightly less angle on mobile */
+        top: 3%;
+        left: 3%;
+    }
+}
 .video-container {
     position: relative;
     width: 0%; /* Or a percentage that suits your desired width relative to the parent */
