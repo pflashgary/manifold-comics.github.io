@@ -10,24 +10,22 @@
 
 <body>
     <header>
-        <h1>Manifold Comics</h1>
+        <div id="hero" class="d-flex flex-column justify-content-center">
+            <div class="container" data-aos="zoom-in" data-aos-delay="100">
+                <p>It's <span class="typed"
+                        data-typed-items="an intelligent failure, amusingly thought-provoking, an acquired taste"></span>
+                </p>
+            </div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#spurts">Spurts</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero" class="d-flex flex-column justify-content-center">
-        <div class="container" data-aos="zoom-in" data-aos-delay="100">
-            <p>It's <span class="typed"
-                    data-typed-items="an intelligent failure, amusingly thought-provoking, an acquired taste"></span></p>
-
-        </div>
-    </section>
 
     <section id="home">
         <h2>About IT</h2>
@@ -52,7 +50,6 @@
             <div class="arrow"></div>
         </div>
     </section>
-
 
     <section id="about">
         <h2>About Us</h2>
@@ -175,15 +172,15 @@
 </section>
 
 
-    <section id="contact" style="margin-top: 20px auto;">
-        <h2>Contact Us</h2>
-        <form action="submit_form.php" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form action="submit_form.php" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
 
 <footer>
